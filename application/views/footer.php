@@ -33,9 +33,22 @@
 
     <!-- ChartJS-->
     <script src="<?php echo base_url();?>berkas/js/plugins/chartJs/Chart.min.js"></script>
+    
+    <!-- Datapicker -->
+    <script src="<?php echo base_url();?>berkas/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    
+    <!-- Daterangepicker -->
+    <script src="<?php echo base_url();?>berkas/js/plugins/daterangepicker/daterangepicker.js"></script>
 
 <script>
     $(document).ready(function() {
         $('#datatable').DataTable();
+
+        $('.input-daterange').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            format: "dd/mm/yyyy"
+        });
     });
 </script>

@@ -18,6 +18,12 @@
     <!-- Gritter -->
     <link href="<?php echo base_url()?>berkas/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
+    <!-- Daterangepicker -->
+    <link href="<?php echo base_url()?>berkas/css/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet">
+    
+    <!-- Datepicker -->
+    <link href="<?php echo base_url()?>berkas/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
     <link href="<?php echo base_url()?>berkas/css/animate.css" rel="stylesheet">
     <link href="<?php echo base_url()?>berkas/css/style.css" rel="stylesheet">
     <script src="<?php echo base_url()?>berkas/js/jquery-3.1.1.min.js"></script>

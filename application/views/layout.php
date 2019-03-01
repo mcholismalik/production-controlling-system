@@ -7,6 +7,7 @@
 		<div id="wrapper">
 			<div id="page-wrapper" class="gray-bg">
 				<?php 
+					// DUMMY
 					if ($page == 'beranda') {
 						$this->load->view('page/beranda');
 					}
@@ -17,7 +18,7 @@
 						$this->load->view('page/module_2');
 					}
 					elseif ($page == 'module_3') {
-						$this->load->view('page/module_4');
+						$this->load->view('page/module_3');
 					}
 					elseif ($page == 'hak_akses') {
 						$this->load->view('page/hak_akses');
@@ -34,6 +35,12 @@
 					elseif ($page == 'jabatan') {
 						$this->load->view('page/jabatan');
 					}
+					
+					// REAL
+					elseif($page == 'production_list_data') {
+						$this->load->view('production/list_data');
+					}
+
 				?>
 				<?php $this->load->view('copyright'); ?>
 				<?php $this->load->view('footer'); ?>
