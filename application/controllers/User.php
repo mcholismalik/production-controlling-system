@@ -3,8 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 	
-	public function login()
+	public function index() 
 	{
-		$this->load->view('page/login');
+		$d['page'] = 'user_list_data';
+		$this->load->view('layout', $d);
 	}
 }

@@ -17,7 +17,10 @@
                 <a href="<?php echo base_url();?>beranda"><i class="fa fa-th-large"></i><span class="nav-label">Dashboard</span></a>
             </li>
             <li>
-                <a href="<?php echo base_url();?>production"><i class="fa fa-list"></i> <span class="nav-label">Produksi</span></a>
+                <a href="<?php echo base_url();?>production"><i class="fa fa-dropbox"></i> <span class="nav-label">Produksi</span></a>
+            </li>
+            <li>
+                <a href="<?php echo base_url();?>user"><i class="fa fa-user"></i> <span class="nav-label">User</span></a>
             </li>
 
             <!-- <li>
