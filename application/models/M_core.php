@@ -7,13 +7,16 @@ class M_core extends CI_Model {
         $this->db->select($paramSelect);
         if ($condition) {
             foreach ($condition as $c) {
-                if (($c['2']) == null) {
-                    $this->db->$c[0]($c[1]);
+                $c0 = $c[0];
+                $c1 = $c[1];
+                $c2 = $c[2];
+                if (($c2) == null) {
+                    $this->db->$c0($c1);
                 } else {
-                    if($c['2'] == 'like') {
-                        $this->db->$c[2]($c[0], $c[1], $c[3]);
+                    if($c2 == 'like') {
+                        $this->db->$c2($c0, $c1, $c3);
                     } else {
-                        $this->db->$c[2]($c[0], $c[1]);                        
+                        $this->db->$c2($c0, $c1);                        
                     }
                 }
             }
@@ -25,13 +28,16 @@ class M_core extends CI_Model {
         $this->db->select($paramSelect);
         if ($condition) {
             foreach ($condition as $c) {
-                if (($c['2']) == null) {
-                    $this->db->$c[0]($c[1]);
+                $c0 = $c[0];
+                $c1 = $c[1];
+                $c2 = $c[2];
+                if (($c2) == null) {
+                    $this->db->$c0($c1);
                 } else {
-                    if($c['2'] == 'like') {
-                        $this->db->$c[2]($c[0], $c[1], $c[3]);
+                    if($c2 == 'like') {
+                        $this->db->$c2($c0, $c1, $c3);
                     } else {
-                        $this->db->$c[2]($c[0], $c[1]);                        
+                        $this->db->$c2($c0, $c1);                        
                     }
                 }
             }
