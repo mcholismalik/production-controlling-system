@@ -42,9 +42,27 @@
 
 <script>
     $(document).ready(function() {
-        $('#datatable').DataTable();
+        $('.datatables').DataTable();
+        $('.datatables-export').DataTable({
+            pageLength: 25,
+            responsive: true,
+            dom: '<"html5buttons"B>lTfgitp',
+            buttons: [
+                {extend: 'excel', title: 'ExampleFile'},
+                {extend: 'pdf', title: 'ExampleFile'}
+            ]
+        });
 
         $('.input-daterange').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            format: "dd/mm/yyyy"
+        });
+
+        $('.input-group.date').datepicker({
+            startView: 1,
+            todayBtn: "linked",
             keyboardNavigation: false,
             forceParse: false,
             autoclose: true,
