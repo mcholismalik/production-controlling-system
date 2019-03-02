@@ -127,10 +127,14 @@
                                 <td><?php echo $no++;?></td>
                                 <td><?php echo $v['factory_name'];?></td>
                                 <td><?php echo date('D, d-M-Y', strtotime($v['date']));?></td>
-                                <td><?php echo $v['shift_name'];?></td>
+                                
+                                <td>
+                                    <?php $label = ($v['id_shift'] == 1) ? 'info' : 'warning';?>
+                                    <small class="label label-<?php echo $label;?>"><?php echo $v['shift_name'];?></small>
+                                </td>
                                 <td><?php echo $v['total'];?></td>
                                 <td>
-                                    <button onclick="show_modal('edit', this)" class="btn btn-xs btn-info"
+                                    <button onclick="show_modal('edit', this)" class="btn btn-xs btn-success"
                                             data-id_production="<?php echo $v['id_production'];?>"
                                             data-id_factory="<?php echo $v['id_factory'];?>"
                                             data-id_shift="<?php echo $v['id_shift'];?>"

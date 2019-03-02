@@ -54,9 +54,20 @@
                                 <td><?php echo $v['role'];?></td>
                                 <td><?php echo $v['username'];?></td>
                                 <td><?php echo $this->encryption->decrypt($v['password']);?></td>
-                                <td><?php echo ($v['status'] == 1) ? 'Aktif' : 'Tidak Aktif';?></td>
                                 <td>
-                                    <button onclick="show_modal('edit', this)" class="btn btn-xs btn-info"
+                                    <?php 
+                                        if($v['status'] == 1) {
+                                            $label = 'info';
+                                            $text = 'Aktif';
+                                        } else {
+                                            $label = 'danger';
+                                            $text = 'Tidak Aktif';
+                                        }
+                                    ?>
+                                    <small class="label label-<?php echo $label;?>"><?php echo $text;?></small>
+                                </td>
+                                <td>
+                                    <button onclick="show_modal('edit', this)" class="btn btn-xs btn-success"
                                             data-id_user="<?php echo $v['id_user'];?>"
                                             data-name="<?php echo $v['name'];?>"
                                             data-id_role="<?php echo $v['id_role'];?>"
