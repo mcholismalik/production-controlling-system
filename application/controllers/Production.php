@@ -26,4 +26,25 @@ class Production extends CI_Controller {
 		$d['page'] = 'production_list_data';
 		$this->load->view('layout', $d);
 	}
+
+	public function save() 
+	{
+		$data = [];
+		$id_production = $this->input->post('id_production');
+		$data['id_factory'] = $this->input->post('id_factory');
+		$data['id_shift'] = $this->input->post('id_shift');
+		$data['date'] = date('Y-m-d', strtotime($this->input->post('date')));
+		$data['total'] = $this->input->post('total');
+		$data['modified_date'] = date('Y-m-d H:i:s');
+
+		if($id_production == '') { 
+			$data['created_date'] = date('Y-m-d H:i:s');
+			$execute = $this->M_production->insert_production($data);
+		} else {
+			$execute = $this->M_production->update_production($data, $id_production);
+		}
+		
+		$code = ($execute) ? 'success' : 'error';
+		redirect('production?msg='.$code);
+	}
 }

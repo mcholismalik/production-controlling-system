@@ -4,6 +4,26 @@
             <h2>Data Produksi</h2>
         </div>
     </div>
+    <?php 
+        if(!empty($_GET['msg'])) { 
+            $msg = $_GET['msg']; 
+            if($msg == 'error') {
+                $msg_code = 'danger';
+                $msg_text = 'Data gagal di proses !';                
+            } else {
+                $msg_code = 'success';
+                $msg_text = 'Data berhasil di proses !';                
+            }
+    ?>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-<?php echo $msg_code;?> alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                    <?php echo $msg_text;?>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
@@ -68,7 +88,7 @@
                                 <button class="btn btn-xs btn-warning" onclick="filter()">
                                     <i class="fa fa-search"></i> Filter
                                 </button>
-                                <?php if(!empty($_GET)) { ?>
+                                <?php if(!empty($_GET['filter'])) { ?>
                                 <button class="btn btn-xs btn-danger" onclick="remove_filter()">
                                     <i class="fa fa-times"></i> Remove
                                 </button>
@@ -129,7 +149,7 @@
     </div>
 </div>
 
-<form class="m-t" id="form-production" role="form" method="POST" action="<?php echo base_url();?>production/save">
+<form id="form-production" role="form" method="POST" action="<?php echo base_url();?>production/save">
     <div id="modal-form" class="modal fade" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -166,7 +186,7 @@
                         <div class="col-md-12">
                             <div class="form-group"><label class="col-sm-2 control-label">Shift</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control m-b" name="id_factory" required> 
+                                    <select class="form-control m-b" name="id_shift" required> 
                                         <option value=""> -- Pilih Shift -- </option>
                                         <?php foreach($shift as $v) { ?>
                                         <option value="<?php echo $v['id_shift'];?>"><?php echo $v['name'];?></option>
@@ -186,7 +206,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="col-md-12">
-                        <button class="btn btn-xs btn-success"><i class="fa fa-save"></i> Simpan</button>
+                        <button type="submit" class="btn btn-xs btn-success"><i class="fa fa-save"></i> Simpan</button>
                     </div>
                 </div>
             </div>
@@ -225,7 +245,7 @@
         let min_total = $('input[name="min_total"]').val();
         
         window.location.href = 
-        '<?php echo base_url()?>production?id_factory='+id_fc+
+        '<?php echo base_url()?>production?filter=true&id_factory='+id_fc+
         '&id_shift='+id_sf+'&date_start='+dt_start+
         '&date_end='+dt_end+'&min_total='+min_total;
     }
