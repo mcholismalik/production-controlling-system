@@ -3,10 +3,11 @@ Production Controlling System is web application for controlling production in m
 
 
 ### Access
-You can try this web application at 
-url : http://pcs.nakoding.com
-user : malik
-pass : 123456
+You can try this web application at
+
+- url : http://pcs.nakoding.com
+- user : malik
+- pass : 123456
 
 ### Credits
 Copyright (c) 2019 by 
