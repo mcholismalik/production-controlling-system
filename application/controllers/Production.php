@@ -5,6 +5,9 @@ class Production extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		if (!$this->session->userdata('id_user')) {
+			redirect('auth/login');
+		}
 		$this->load->model('M_data_master');
 		$this->load->model('M_production');
 	}

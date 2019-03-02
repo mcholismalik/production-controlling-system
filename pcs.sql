@@ -140,13 +140,15 @@ CREATE TABLE IF NOT EXISTS `m_user` (
   `modified_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id_user`),
   KEY `id_role` (`id_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table pcs.m_user: ~2 rows (approximately)
+-- Dumping data for table pcs.m_user: ~4 rows (approximately)
 /*!40000 ALTER TABLE `m_user` DISABLE KEYS */;
 INSERT INTO `m_user` (`id_user`, `id_role`, `name`, `username`, `password`, `status`, `created_by`, `created_date`, `modified_by`, `modified_date`) VALUES
-	(1, 1, 'Haidar', 'haidar', 'rCDFgFNWKWmxRtiUYBPNrq3csC8oHpBq8siVtCoVAwDNGRfxcgcwgS4RXGs4iksZNLb+GrRl2NLVlnXzbaLVWA==', 1, NULL, '2019-02-28 22:17:57', NULL, '2019-02-28 22:17:58'),
-	(2, 2, 'Ghozi', 'ghozi', 'rCDFgFNWKWmxRtiUYBPNrq3csC8oHpBq8siVtCoVAwDNGRfxcgcwgS4RXGs4iksZNLb+GrRl2NLVlnXzbaLVWA==', 1, NULL, '2019-02-28 22:17:57', NULL, '2019-02-28 22:17:58');
+	(1, 1, 'Haidar', 'haidar', 'a02d2b9fbf72dd10278b16904604a49d71309868b04fa2ae03181f9c1928b7b583059c003d945f0a3220b10541827208ee4207276a88b3fc90d99179213d9482JksbuTeyokCikbj4NZDXYnTp/PNRcJPA5mtFl2A3W+0=', 1, NULL, '2019-02-28 22:17:57', NULL, '2019-02-28 22:17:58'),
+	(2, 2, 'Ghozi', 'ghozi', 'a02d2b9fbf72dd10278b16904604a49d71309868b04fa2ae03181f9c1928b7b583059c003d945f0a3220b10541827208ee4207276a88b3fc90d99179213d9482JksbuTeyokCikbj4NZDXYnTp/PNRcJPA5mtFl2A3W+0=', 0, NULL, '2019-02-28 22:17:57', NULL, '2019-02-28 22:17:58'),
+	(3, 1, 'Malik', 'malik', '00dacc64572342527010bba118f5e4455442f94cd7039fcea8238d20c74e50384588e00b2a5c00e0955b39de74194d4721b15d755959a52f362317df9c4b9de9Xgo1ENmA99r+SJMhJPL8I2/0GabBoQbh5lKUo8nrb28=', 0, NULL, '2019-03-02 17:56:47', NULL, '2019-03-02 17:57:35'),
+	(4, 2, 'Wilson', 'Wilson', 'f19f0c6a4bc7b947c50e3ee6620f29912399cf5ad85fecad237ca0d376ba74be62d9fc00d88f2c08d99be15f8ffc834c2b595f6f7aaa259be039107a70466804l+ndNE4VCVKCfBs9tk9lEZ6P7o7HRSp3S1eQTRKtxWI=', 1, NULL, '2019-03-02 18:05:36', NULL, '2019-03-02 18:05:42');
 /*!40000 ALTER TABLE `m_user` ENABLE KEYS */;
 
 -- Dumping structure for table pcs.t_production
@@ -165,15 +167,16 @@ CREATE TABLE IF NOT EXISTS `t_production` (
   UNIQUE KEY `uc_production` (`id_factory`,`date`,`id_shift`),
   KEY `id_factory` (`id_factory`),
   KEY `id_shift` (`id_shift`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
--- Dumping data for table pcs.t_production: ~4 rows (approximately)
+-- Dumping data for table pcs.t_production: ~5 rows (approximately)
 /*!40000 ALTER TABLE `t_production` DISABLE KEYS */;
 INSERT INTO `t_production` (`id_production`, `id_factory`, `date`, `id_shift`, `total`, `created_date`, `created_by`, `modified_date`, `modified_by`, `status`) VALUES
-	(2, 1, '2019-03-02', 1, 20, '2019-03-02 09:26:11', NULL, '2019-03-02 14:00:01', NULL, 1),
+	(2, 1, '2019-03-02', 2, 20, '2019-03-02 09:26:11', NULL, '2019-03-02 17:15:33', NULL, 1),
 	(3, 1, '2019-03-03', 1, 30, '2019-04-02 09:26:11', NULL, '2019-03-02 14:00:03', NULL, 1),
 	(4, 1, '2019-03-04', 1, 40, '2019-05-02 09:26:11', NULL, '2019-03-02 14:00:04', NULL, 1),
-	(5, 1, '2019-03-05', 1, 10, '2018-01-02 09:26:11', NULL, '2019-03-02 14:00:05', NULL, 1);
+	(5, 1, '2019-03-05', 1, 10, '2018-01-02 09:26:11', NULL, '2019-03-02 14:00:05', NULL, 1),
+	(9, 3, '2019-03-03', 2, 90, '2019-03-02 17:12:40', NULL, '2019-03-02 17:12:40', NULL, 1);
 /*!40000 ALTER TABLE `t_production` ENABLE KEYS */;
 
 -- Dumping structure for view pcs.v_production

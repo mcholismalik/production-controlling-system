@@ -5,9 +5,6 @@ class Auth extends CI_Controller {
 	public function __construct() 
 	{
         parent::__construct();
-        if (!$this->session->userdata('id_user')) {
-        	redirect('auth/login');
-        }
 	}
 
 	public function login()
@@ -39,11 +36,11 @@ class Auth extends CI_Controller {
 				$this->session->set_userdata($sess_data);
 				$this->session->set_flashdata("psn", "Selamat Datang");
 				redirect('beranda');
-			}else{
+			} else {
 				$this->session->set_flashdata('psn','Username atau Password Salah');
 				redirect('auth/login');
 			}
-		}else{
+		} else {
 			$this->session->set_flashdata('psn','Username atau Password Salah');
 			redirect('auth/login');
 		}

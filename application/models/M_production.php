@@ -1,7 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class M_production extends CI_Model {
-    
     function get_production($id_factory=null, $id_shift=null, $date_start=null, $date_end=null, $min_total=null) 
     {   
         try {
