@@ -17,7 +17,9 @@
                         <div class="form-group"><label class="col-sm-2 control-label">Pabrik</label>
                             <div class="col-sm-10">
                                 <select class="form-control m-b" name="id_factory">
-                                    <option>option 1</option>
+                                    <?php foreach($factory as $v) { ?>
+                                    <option value="<?php echo $v['id_factory'];?>"><?php echo $v['name'];?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
