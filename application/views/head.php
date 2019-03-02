@@ -24,13 +24,13 @@
     <!-- Datepicker -->
     <link href="<?php echo base_url()?>berkas/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
 
+    <!-- Datatables -->
+    <link href="<?php echo base_url()?>berkas/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    
+    <!-- General -->
     <link href="<?php echo base_url()?>berkas/css/animate.css" rel="stylesheet">
     <link href="<?php echo base_url()?>berkas/css/style.css" rel="stylesheet">
     <script src="<?php echo base_url()?>berkas/js/jquery-3.1.1.min.js"></script>
     <script src="<?php echo base_url()?>berkas/js/bootstrap.min.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/> -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
-     
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo base_url()?>berkas/js/plugins/dataTables/datatables.min.js"></script>
 </head>

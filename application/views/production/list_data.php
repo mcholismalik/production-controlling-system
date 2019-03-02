@@ -86,12 +86,11 @@
                 <div class="ibox-title font-bold">
                     <h5>List Data Produksi</h5>
                     <div class="ibox-tools">
-                    <button class="btn btn-xs btn-primary" onclick="show_modal()"><i class="fa fa-file-excel-o"></i> Export Excel</button>
-                    <button class="btn btn-xs btn-success" onclick="show_modal()"><i class="fa fa-plus"></i> Tambah Data</button>
+                        <button class="btn btn-xs btn-primary" onclick="show_modal('add')"><i class="fa fa-plus"></i> Tambah Data</button>
                     </div>
                 </div>
                 <div class="ibox-content" style="overflow: auto;">
-                    <table class="table table-responsive table-hovered table-bordered" id="datatable">
+                    <table class="table table-responsive table-hovered table-bordered datatables-production">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -110,7 +109,16 @@
                                 <td><?php echo date('D, d-M-Y', strtotime($v['date']));?></td>
                                 <td><?php echo $v['shift_name'];?></td>
                                 <td><?php echo $v['total'];?></td>
-                                <td><button onclick="show_modal()" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></button></td>
+                                <td>
+                                    <button onclick="show_modal('edit', this)" class="btn btn-xs btn-info"
+                                            data-id_production="<?php echo $v['id_production'];?>"
+                                            data-id_factory="<?php echo $v['id_factory'];?>"
+                                            data-id_shift="<?php echo $v['id_shift'];?>"
+                                            data-date="<?php echo $v['date'];?>"
+                                            data-total="<?php echo $v['total'];?>">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </td>
                             </tr>
                             <?php } ?>
                         </tbody>
@@ -121,30 +129,100 @@
     </div>
 </div>
 
-<div id="modal-form" class="modal fade" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h3 class="m-t-none m-b">Detail Data Produksi</h3>
+<form class="m-t" id="form-production" role="form" method="POST" action="<?php echo base_url();?>production/save">
+    <div id="modal-form" class="modal fade" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="m-t-none m-b title">Detail Data Produksi</h3>
+                        </div>
+                        <input type="hidden" name="method" value="add">
+                        <input type="hidden" name="id_production" value="">
+                        <div class="col-md-12">
+                            <div class="form-group"><label class="col-sm-2 control-label">Pabrik</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control m-b" name="id_factory" required>
+                                        <option value=""> -- Pilih Pabrik -- </option>
+                                        <?php foreach($factory as $v) { ?>
+                                        <option value="<?php echo $v['id_factory'];?>"><?php echo $v['name'];?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group"><label class="col-sm-2 control-label">Tgl Produksi</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group" id="data_1">
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" name="date" value="" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group"><label class="col-sm-2 control-label">Shift</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control m-b" name="id_factory" required> 
+                                        <option value=""> -- Pilih Shift -- </option>
+                                        <?php foreach($shift as $v) { ?>
+                                        <option value="<?php echo $v['id_shift'];?>"><?php echo $v['name'];?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group"><label class="col-sm-2 control-label">Total Produksi</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="total" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                        <button class="btn btn-xs btn-success"><i class="fa fa-save"></i> Simpan</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 
 <script>
-    function show_modal() {
+    function show_modal(method, el=null) {
+        let arr = [];
+        $.each($(el).data(), (k, v) => {
+            arr[k] = v;
+        })
+
+        if(method == 'add') {
+            title = 'Tambah Data Produksi'; 
+            $('#form-production').trigger("reset");          
+        } else {
+            title = 'Edit Data Produksi';
+            $('#modal-form input[name="id_production"]').val(arr['id_production']);
+            $('#modal-form select[name="id_factory"]').val(arr['id_factory']);
+            $('#modal-form select[name="id_shift"]').val(arr['id_shift']);
+            $('#modal-form input[name="date"]').val(arr['date']);
+            $('#modal-form input[name="total"]').val(arr['total']);
+        }
+        $('#modal-form input[name="method"]').val(method);
+        $('#modal-form .title').text(title);
         $('#modal-form').modal('show');
     }
+
     function filter() {
-        id_fc = $('select[name="id_factory"]').val();
-        id_sf = $('select[name="id_shift"]').val();
-        dt_start = $('input[name="date_start"]').val();
-        dt_end = $('input[name="date_end"]').val();
-        min_total = $('input[name="min_total"]').val();
+        let id_fc = $('select[name="id_factory"]').val();
+        let id_sf = $('select[name="id_shift"]').val();
+        let dt_start = $('input[name="date_start"]').val();
+        let dt_end = $('input[name="date_end"]').val();
+        let min_total = $('input[name="min_total"]').val();
         
         window.location.href = 
         '<?php echo base_url()?>production?id_factory='+id_fc+
@@ -160,4 +238,13 @@
         $('input[name="min_total"]').val('');
         window.location.href = '<?php echo base_url()?>production';
     }
+
+    $('.datatables-production').DataTable({
+        pageLength: 10,
+        responsive: true,
+        dom: '<"html5buttons"B>lTfgitp',
+        buttons: [
+            {extend: 'excel', title: 'Data_Produksi_'+'<?php echo date('Y-m-d');?>'}
+        ]
+    });
 </script>
