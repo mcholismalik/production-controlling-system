@@ -30,9 +30,11 @@ class User extends CI_Controller {
 		$data['password'] = $this->encryption->encrypt($this->input->post('password'));
 		$data['status'] = $this->input->post('status');
 		$data['modified_date'] = date('Y-m-d H:i:s');
+		$data['modified_by'] = $this->session->userdata('id_user');
 
 		if($id_user == '') { 
 			$data['created_date'] = date('Y-m-d H:i:s');
+			$data['created_by'] = $this->session->userdata('id_user');
 			$execute = $this->M_user->insert_user($data);
 		} else {
 			$execute = $this->M_user->update_user($data, $id_user);

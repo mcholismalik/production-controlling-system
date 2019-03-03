@@ -110,7 +110,7 @@
                     </div>
                 </div>
                 <div class="ibox-content" style="overflow: auto;">
-                    <table class="table table-responsive table-hovered table-bordered datatables-production">
+                    <table class="table table-responsive table-hover table-bordered datatables-production">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -118,6 +118,10 @@
                                 <th>Tgl Produksi</th>
                                 <th>Shift</th>
                                 <th>Total Produksi</th>
+                                <th>Created Date</th>
+                                <th>Created By</th>
+                                <th>Modified Date</th>
+                                <th>Modified By</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -127,12 +131,15 @@
                                 <td><?php echo $no++;?></td>
                                 <td><?php echo $v['factory_name'];?></td>
                                 <td><?php echo date('D, d-M-Y', strtotime($v['date']));?></td>
-                                
                                 <td>
                                     <?php $label = ($v['id_shift'] == 1) ? 'info' : 'warning';?>
                                     <small class="label label-<?php echo $label;?>"><?php echo $v['shift_name'];?></small>
                                 </td>
-                                <td><?php echo $v['total'];?></td>
+                                <td><?php echo $v['total'];?></td>                                
+                                <td><?php echo $v['created_date'];?></td>                                
+                                <td><?php echo $v['created_by_name'];?></td>     
+                                <td><?php echo $v['modified_date'];?></td>                                
+                                <td><?php echo $v['modified_by_name'];?></td>  
                                 <td>
                                     <button onclick="show_modal('edit', this)" class="btn btn-xs btn-success"
                                             data-id_production="<?php echo $v['id_production'];?>"
@@ -142,7 +149,7 @@
                                             data-total="<?php echo $v['total'];?>">
                                         <i class="fa fa-pencil"></i>
                                     </button>
-                                </td>
+                                </td>                           
                             </tr>
                             <?php } ?>
                         </tbody>

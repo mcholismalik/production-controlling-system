@@ -39,9 +39,11 @@ class Production extends CI_Controller {
 		$data['date'] = date('Y-m-d', strtotime($this->input->post('date')));
 		$data['total'] = $this->input->post('total');
 		$data['modified_date'] = date('Y-m-d H:i:s');
-
+		$data['modified_by'] = $this->session->userdata('id_user');
+		
 		if($id_production == '') { 
 			$data['created_date'] = date('Y-m-d H:i:s');
+			$data['created_by'] = $this->session->userdata('id_user');
 			$execute = $this->M_production->insert_production($data);
 		} else {
 			$execute = $this->M_production->update_production($data, $id_production);

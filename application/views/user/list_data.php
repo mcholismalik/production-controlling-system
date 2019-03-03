@@ -43,6 +43,10 @@
                                 <th>Username</th>
                                 <th>Password</th>
                                 <th>Status</th>
+                                <th>Created Date</th>
+                                <th>Created By</th>
+                                <th>Modified Date</th>
+                                <th>Modified By</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -66,6 +70,10 @@
                                     ?>
                                     <small class="label label-<?php echo $label;?>"><?php echo $text;?></small>
                                 </td>
+                                <td><?php echo $v['created_date'];?></td>
+                                <td><?php echo $v['created_by_name'];?></td>
+                                <td><?php echo $v['modified_date'];?></td>
+                                <td><?php echo $v['modified_by_name'];?></td>
                                 <td>
                                     <button onclick="show_modal('edit', this)" class="btn btn-xs btn-success"
                                             data-id_user="<?php echo $v['id_user'];?>"
