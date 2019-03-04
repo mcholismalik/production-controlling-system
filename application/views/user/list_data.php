@@ -116,7 +116,7 @@
                     <div class="col-md-12 m-b">
                         <div class="form-group"><label class="col-sm-2 control-label">Role</label>
                             <div class="col-sm-10">
-                                <select class="form-control select2" name="id_role" required> 
+                                <select class="form-control chosen-select" name="id_role" required> 
                                     <option value=""> -- Pilih Role -- </option>
                                     <?php foreach($role as $v) { ?>
                                     <option value="<?php echo $v['id_role'];?>"><?php echo $v['role'];?></option>
@@ -179,7 +179,9 @@
             $('#modal-form input[name="username"]').val(arr['username']);
             $('#modal-form input[name="password"]').val(arr['password']);
             $('#modal-form select[name="status"]').val(arr['status']);
+
         }
+        $('.chosen-select').trigger('chosen:updated');
         $('#modal-form input[name="method"]').val(method);
         $('#modal-form .title').text(title);
         $('#modal-form').modal('show');

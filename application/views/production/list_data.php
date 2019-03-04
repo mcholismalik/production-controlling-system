@@ -234,7 +234,7 @@
 
         if(method == 'add') {
             title = 'Tambah Data Produksi'; 
-            $('#form-production').trigger("reset");          
+            $('#form-production').trigger("reset");       
         } else {
             title = 'Edit Data Produksi';
             $('#modal-form input[name="id_production"]').val(arr['id_production']);
@@ -243,6 +243,7 @@
             $('#modal-form input[name="date"]').val(arr['date']);
             $('#modal-form input[name="total"]').val(arr['total']);
         }
+        $('.chosen-select').trigger('chosen:updated');
         $('#modal-form input[name="method"]').val(method);
         $('#modal-form .title').text(title);
         $('#modal-form').modal('show');
