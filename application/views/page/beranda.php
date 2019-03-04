@@ -1,7 +1,7 @@
 
 <div class="wrapper wrapper-content">
     <div class="row">
-        <div class="col-lg-2">
+        <!-- <div class="col-lg-2">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
                     <span class="label label-success pull-right">Harian</span>
@@ -25,22 +25,46 @@
                 </div>
             </div>
         </div>
-
+ -->
         <div class="col-lg-4">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <span class="label label-primary pull-right">Tahunan</span>
+                    <span class="label label-primary pull-right">Harian</span>
                     <h5>Total Produksi</h5>
                 </div>
                 <div class="ibox-content">
 
                     <div class="row">
                         <div class="col-md-6 text-center">
-                            <h1 class="no-margins"><?php echo $ttl_thn_pagi; ?></h1>
+                            <h1 class="no-margins"><?php echo $ttl_shift_pagi; ?></h1>
                             <div class="font-bold"><small>SIP Pagi</small></div>
                         </div>
                         <div class="col-md-6 text-center">
-                            <h1 class="no-margins"><?php echo $ttl_thn_sore; ?></h1>
+                            <h1 class="no-margins"><?php echo $ttl_shift_sore; ?></h1>
+                            <div class="font-bold"><small>SIP Sore</small></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <span class="label label-info pull-right">Mingguan</span>
+                    <h5>Total Produksi</h5>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <h1 class="no-margins"><?php echo $ttl_mggu_pagi; ?></h1>
+                            <div class="font-bold"><small>SIP Pagi</small></div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <h1 class="no-margins"><?php echo $ttl_mggu_sore; ?></h1>
                             <div class="font-bold"><small>SIP Sore</small></div>
                         </div>
                     </div>
@@ -103,14 +127,14 @@
                                         <h2 class="no-margins"><?php echo $ttl_all_now; ?></h2>
                                         <small>Total Produksi Tahun <?php echo date('Y'); ?></small>
                                         <div class="progress progress-mini">
-                                            <div class="progress-bar" style="width: 48%;"></div>
+                                            <div class="progress-bar" style="width: <?php echo $ttl_all_now_prsn; ?>%;"></div>
                                         </div>
                                     </li>
                                     <li>
                                         <h2 class="no-margins "><?php echo $ttl_all_ysterday; ?></h2>
                                         <small>Total Produksi Tahun <?php echo date('Y', strtotime('-1 year')); ?></small>
                                         <div class="progress progress-mini">
-                                            <div class="progress-bar" style="width: 60%;"></div>
+                                            <div class="progress-bar" style="width: <?php echo $ttl_all_ys_prsn; ?>%;"></div>
                                         </div>
                                     </li>
                                 </ul>

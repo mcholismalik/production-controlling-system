@@ -66,4 +66,20 @@ class M_core extends CI_Model {
     function insert_tbl_batch($paramTable, $data) {
         $this->db->insert_batch($paramTable, $data);
     }
+
+    function get_mingguan_pagi(){
+        $data = $this->db->query('select sum(total) as total from t_production where YEARWEEK(date) = YEARWEEK(CURDATE()) and status = 1 and id_shift = 1')->row_array()['total'];
+        return $data;
+    }
+
+    function get_mingguan_sore(){
+        $data = $this->db->query('select sum(total) as total from t_production where YEARWEEK(date) = YEARWEEK(CURDATE()) and status = 1 and id_shift = 2')->row_array()['total'];
+        return $data;
+    }
+
+    function get_mingguan_ys(){
+        $data = $this->db->query('select sum(total) as total from t_production where YEARWEEK(date) = YEARWEEK(NOW() - INTERVAL 1 WEEK) and status = 1')->row_array()['total'];
+        return $data;
+    }
+
 }
