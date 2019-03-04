@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `m_role` (
   PRIMARY KEY (`id_role`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table pcs.m_role: ~2 rows (approximately)
+-- Dumping data for table pcs.m_role: ~3 rows (approximately)
 /*!40000 ALTER TABLE `m_role` DISABLE KEYS */;
 INSERT INTO `m_role` (`id_role`, `role`, `status`) VALUES
 	(1, 'Admin', 1),
