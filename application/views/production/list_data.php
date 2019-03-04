@@ -40,10 +40,10 @@
                     $min_total = (!empty($_GET['min_total'])) ? $_GET['min_total'] : null;
                 ?>
                 <div class="ibox-content" style="overflow: auto;">
-                    <div class="col-md-12">
+                    <div class="col-md-12 m-b">
                         <div class="form-group"><label class="col-sm-2 control-label">Pabrik</label>
                             <div class="col-sm-10">
-                                <select class="form-control m-b" name="id_factory">
+                                <select class="form-control chosen-select" name="id_factory">
                                     <option value=""> -- Pilih Pabrik -- </option>
                                     <?php foreach($factory as $v) { ?>
                                     <option <?php if($v['id_factory'] == $id_factory) { echo 'selected'; } ?> value="<?php echo $v['id_factory'];?>"><?php echo $v['name'];?></option>
@@ -52,10 +52,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 m-b">
                         <div class="form-group"><label class="col-sm-2 control-label">Shift</label>
                             <div class="col-sm-10">
-                                <select class="form-control m-b" name="id_shift">
+                                <select class="form-control chosen-select" name="id_shift">
                                     <option value=""> -- Pilih Shift -- </option>
                                     <?php foreach($shift as $v) { ?>
                                     <option <?php if($v['id_shift'] == $id_shift) { echo 'selected'; } ?> value="<?php echo $v['id_shift'];?>"><?php echo $v['name'];?></option>
@@ -64,10 +64,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 m-b">
                         <div class="form-group"><label class="col-sm-2 control-label">Range Tanggal</label>
                             <div class="col-sm-10">
-                                <div class="input-daterange input-group m-b" id="datepicker">
+                                <div class="input-daterange input-group" id="datepicker">
                                     <input type="text" class="input-sm form-control" name="date_start" value="<?php echo $date_start;?>">
                                     <span class="input-group-addon">to</span>
                                     <input type="text" class="input-sm form-control" name="date_end" value="<?php echo $date_end;?>">
@@ -75,10 +75,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 m-b">
                         <div class="form-group"><label class="col-sm-2 control-label">Min Total Produksi</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control m-b" name="min_total" value="<?php echo $min_total;?>">
+                                <input type="number" class="form-control" name="min_total" value="<?php echo $min_total;?>">
                             </div>
                         </div>
                     </div>
@@ -171,10 +171,10 @@
                         </div>
                         <input type="hidden" name="method" value="add">
                         <input type="hidden" name="id_production" value="">
-                        <div class="col-md-12">
+                        <div class="col-md-12 m-b">
                             <div class="form-group"><label class="col-sm-2 control-label">Pabrik</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control m-b" name="id_factory" required>
+                                    <select class="form-control chosen-select" name="id_factory" required>
                                         <option value=""> -- Pilih Pabrik -- </option>
                                         <?php foreach($factory as $v) { ?>
                                         <option value="<?php echo $v['id_factory'];?>"><?php echo $v['name'];?></option>
@@ -183,7 +183,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 m-b">
                             <div class="form-group"><label class="col-sm-2 control-label">Tgl Produksi</label>
                                 <div class="col-sm-10">
                                     <div class="form-group" id="data_1">
@@ -194,10 +194,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 m-b">
                             <div class="form-group"><label class="col-sm-2 control-label">Shift</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control m-b" name="id_shift" required> 
+                                    <select class="form-control chosen-select" name="id_shift" required> 
                                         <option value=""> -- Pilih Shift -- </option>
                                         <?php foreach($shift as $v) { ?>
                                         <option value="<?php echo $v['id_shift'];?>"><?php echo $v['name'];?></option>
@@ -206,7 +206,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 m-b">
                             <div class="form-group"><label class="col-sm-2 control-label">Total Produksi</label>
                                 <div class="col-sm-10">
                                     <input type="number" class="form-control" name="total" required>

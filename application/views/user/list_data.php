@@ -106,17 +106,17 @@
                     </div>
                     <input type="hidden" name="method" value="add">
                     <input type="hidden" name="id_user" value="">
-                    <div class="col-md-12">
+                    <div class="col-md-12 m-b">
                         <div class="form-group"><label class="col-sm-2 control-label">Nama</label>
                             <div class="col-sm-10">
-                                <input type="text" name="name" class="form-control m-b"> 
+                                <input type="text" name="name" class="form-control"> 
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 m-b">
                         <div class="form-group"><label class="col-sm-2 control-label">Role</label>
                             <div class="col-sm-10">
-                                <select class="form-control m-b" name="id_role" required> 
+                                <select class="form-control select2" name="id_role" required> 
                                     <option value=""> -- Pilih Role -- </option>
                                     <?php foreach($role as $v) { ?>
                                     <option value="<?php echo $v['id_role'];?>"><?php echo $v['role'];?></option>
@@ -125,24 +125,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 m-b">
                         <div class="form-group"><label class="col-sm-2 control-label">Username</label>
                             <div class="col-sm-10">
-                                <input type="text" name="username" class="form-control m-b"> 
+                                <input type="text" name="username" class="form-control"> 
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 m-b">
                         <div class="form-group"><label class="col-sm-2 control-label">Password</label>
                             <div class="col-sm-10">
-                                <input type="text" name="password" class="form-control m-b"> 
+                                <input type="text" name="password" class="form-control"> 
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 m-b">
                         <div class="form-group"><label class="col-sm-2 control-label">Status</label>
                             <div class="col-sm-10">
-                                <select class="form-control m-b" name="status" required>
+                                <select class="form-control" name="status" required>
                                     <option value="1">Aktif</option>
                                     <option value="0">Tidak Aktif</option>
                                 </select>

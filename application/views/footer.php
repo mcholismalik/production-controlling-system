@@ -40,6 +40,12 @@
     <!-- Daterangepicker -->
     <script src="<?php echo base_url();?>berkas/js/plugins/daterangepicker/daterangepicker.js"></script>
 
+    <!-- Select2 -->
+    <script src="<?php echo base_url();?>berkas/js/plugins/select2/select2.full.min.js"></script>
+
+    <!-- Chosen -->
+    <script src="<?php echo base_url();?>berkas/js/plugins/chosen/chosen.jquery.js"></script>
+
 <script>
     $(document).ready(function() {
         $('.datatables').DataTable();
@@ -68,5 +74,8 @@
             autoclose: true,
             format: "dd/mm/yyyy"
         });
+
+        $(".select2").select2();
+        $('.chosen-select').chosen({width: "100%"});
     });
 </script>

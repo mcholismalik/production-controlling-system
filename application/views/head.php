@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Production Controlling System | Dashboard</title>
+    <title>Production Controlling System</title>
 
     <link href="<?php echo base_url()?>berkas/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>berkas/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -26,6 +26,12 @@
 
     <!-- Datatables -->
     <link href="<?php echo base_url()?>berkas/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+
+    <!-- Select2 -->
+    <link href="<?php echo base_url()?>berkas/css/plugins/select2/select2.min.css" rel="stylesheet">
+    
+    <!-- Chosen -->
+    <link href="<?php echo base_url()?>berkas/css/plugins/chosen/bootstrap-chosen.css" rel="stylesheet">
     
     <!-- General -->
     <link href="<?php echo base_url()?>berkas/css/animate.css" rel="stylesheet">

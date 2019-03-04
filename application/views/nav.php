@@ -6,8 +6,8 @@
                     <img alt="image" class="img-circle" src="<?php echo base_url(); ?>berkas/img/profile_small.jpg" />
                      </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Fulan</strong>
-                     </span> <span class="text-muted text-xs block">Administrator</span> </span> </a>
+                    <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $this->session->userdata('name');?></strong>
+                     </span> <span class="text-muted text-xs block"><?php echo $this->session->userdata('role');?></span> </span> </a>
                 </div>
                 <div class="logo-element">
                     PCS
@@ -22,25 +22,6 @@
             <li>
                 <a href="<?php echo base_url();?>user"><i class="fa fa-user"></i> <span class="nav-label">User</span></a>
             </li>
-
-            <!-- <li>
-                <a href="<?php echo base_url();?>module/module_1"><i class="fa fa-list"></i> <span class="nav-label">Module 1</span></a>
-            </li>
-            <li>
-                <a href="<?php echo base_url();?>module/module_2"><i class="fa fa-list"></i> <span class="nav-label">Module 2</span></a>
-            </li>
-            <li>
-                <a href="<?php echo base_url();?>module/module_3"><i class="fa fa-list"></i> <span class="nav-label">User</span></a>
-            </li> -->
-            <!-- <li>
-                <a href="#"><i class="fa fa-cog"></i> <span class="nav-label">Pengaturan</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse">
-                    <li><a href="<?php echo base_url();?>pengaturan/hak_akses">Hak Akses</a></li>
-                    <li><a href="<?php echo base_url();?>pengaturan/user_bo">User BO</a></li>
-                    <li><a href="<?php echo base_url();?>pengaturan/menu_bo">Menu BO</a></li>
-                    <li><a href="<?php echo base_url();?>pengaturan/jabatan">Jabatan</a></li>
-                </ul>
-            </li> -->
         </ul>
 
     </div>
