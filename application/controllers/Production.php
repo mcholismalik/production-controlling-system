@@ -36,7 +36,7 @@ class Production extends CI_Controller {
 		$id_production = $this->input->post('id_production');
 		$data['id_factory'] = $this->input->post('id_factory');
 		$data['id_shift'] = $this->input->post('id_shift');
-		$data['date'] = date('Y-m-d', strtotime($this->input->post('date')));
+		$data['date'] = date('Y-m-d', strtotime(str_replace('/','-',$this->input->post('date'))));
 		$data['total'] = $this->input->post('total');
 		$data['modified_date'] = date('Y-m-d H:i:s');
 		$data['modified_by'] = $this->session->userdata('id_user');
